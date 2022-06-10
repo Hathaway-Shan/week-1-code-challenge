@@ -36,10 +36,18 @@ upButton.addEventListener('click', () => {
 
 
 function changeVolume() {
+    //changes display based on user inputs
     if (userChoice === 'up') {
         volumeLevel++;
     } else if (userChoice === 'down') {
         volumeLevel--;
+    }
+        //set limits at 0 and 20
+    if (volumeLevel > 20) {
+        volumeLevel = 20;
+    }
+    if (volumeLevel < 0) {
+        volumeLevel = 0;
     }
 }
 
