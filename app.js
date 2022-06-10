@@ -16,8 +16,9 @@
 
 const downButton = document.getElementById('down-button');
 const upButton = document.getElementById('up-button');
-let volume = document.getElementById('volume');
+const volume = document.getElementById('volume');
 let userChoice = '';
+let volumeLevel = 10;
 
 downButton.addEventListener('click', () => {
     userChoice = 'down';
@@ -36,12 +37,12 @@ upButton.addEventListener('click', () => {
 
 function changeVolume() {
     if (userChoice === 'up') {
-        volume++;
+        volumeLevel++;
     } else if (userChoice === 'down') {
-        volume--;
+        volumeLevel--;
     }
 }
 
 function volumeDisplay() {
-    volume.value = volume;
+    volume.textContent = volumeLevel;
 }
